@@ -1,0 +1,151 @@
+---
+title: "World Happiness report"
+author: "Jiachen Huo (260779330)"
+date: "17/12/2020"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::read_chunk('Math208_Project.R')
+```
+
+```{r,message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(gridExtra)
+library(knitr)
+```
+
+### **Scores by region in 2019** 
+
+We first computed a summary table and the corresponding bar plot indicates the average score value for each variable of each region, in the year of 2019. From the plot and table we see that  **Family support score ** is the most important indicator among six scores, as it has generally large average scores among regions. (Code chunk 1)
+  
+```{r 1,message=FALSE,echo=FALSE}
+
+```
+  
+If we track through the **Family** indicator, we notice that Western Europe has the largest score of Family support. To be more detailed, Western Europe is actually the region that seems to have the highest score within all six indicators; whereas Sub-Saharan Africa seems to have the lowest score. To be more precise, we need a separated bar plot that can explain the association between different indicators and regions more clearly.(Code chunk 2)
+  
+    
+```{r 2,out.width="70%",echo=FALSE}
+
+```
+  
+As below shown in this separated bar plot with each plot represents an indicator, we notice that the pattern of this score-region association is not the same among these regions. For example Western Europe ranked the top one for all the indicators except "Generosity"; whereas Sub-Saharan Africa ranked the lowest for only "GDP","Life Expectancy" and "Family Support" and not the rest.
+  
+  From an economic point of view, the reason behind these data comes from multiple perspectives: 
+    
+  * **GDP<-->Levels of living and productivity:** Most of the LDCs(i.e.Sub-Saharan Africa area) located in tropical or subtropical climate zones, the extreme heat contributes to deteriorating soil quality and rapid depreciation of many natural goods. Due to this geographical and climatic condition, LDCs usually maintain a low productivity of certain crops, poor health of animals.This directly results in a low level of productivity, and then the GDP per capita in Sub-Saharan Africa area. The Western Europe area,and the rest areas(Middle East and North Africa, Central and East Europe, Americas and Asia), on the other hand, has a higher level of industrialization process, so domestic economy is largely composed of industrial sector. (Code chunk 3)
+  
+  * **Freedom<-->Special political situation:** Freedom and GDP is positively related, as people have more income, they have more freedom to make choice and make income at their command. So regions with high GDP score normally have equivalent levels of Freedom score. Except for Middle East and North Africa area, although Middle East is backed up by its great natural resources, it ranked last in Freedom score despite the fact that they are the second richest region world wide. Due to the sophisticated political reasons, Middle East area has been suffered from wars for a long time, people worry about their safety before all other things which leave them almost no freedom. (Code chunk 3)
+  
+  
+```{r 3,out.height="50%",echo=FALSE}
+
+```
+  
+  
+  * **LifeExp<-->Levels of human capital:** Life expectancy and GDP is also positively related, rich countries generally have better health care resources and welfare system, so people's expectation towards life is high. Levels of human capital includes people's health, education and skills. In LDCs, large proportion of population lives in rural area with limited health care resources, countries located in tropical area are largely affected by malaria and other serious parasitic diseases, this has a huge impact on people's expected life expectancy. According to World Bank's report in 2019, life expectancy at birth is 80.6 in Denmark and 52.4 in Angola. Literacy rate is 99% in Denmark and only 35.5% in Mali(Sub-Saharan Africa country).(Code chunk 4)
+  
+  * **Family<-->Sound social security system:** Family and social support mostly comes from a sound social security system, to eliminate the homelessness; a stable employment environment that makes family feels more relieved. In most case high GDP score give people more access to these social and family supports, however, it does not always guarantee equivalently high perceived family support score. As an example below, the U.S. has a higher GDP level than Finland, but a lower Family score. (Code chunk 4)
+  
+  
+```{r 4, out.height="50%",echo=FALSE}
+
+```
+
+  * **TrustGov<-->A trust worthy government:** People's trust towards the government depends on the government's promise and ability to accomplish the promise. Again, as a developed country with a sound infrastructure society, its people usually are satisfied with the government as they are currently in a good living standard; however, as a developing country, infrastructure is still on the government's toplist, so people may not satisfied.
+  
+  * **Generosity<-->Beyond current living standard:** Generosity is also positively related to GDP, when people have a good living standard, they tend to be generous; whereas when people barely sustain their living standard, they tend not to be generous. (Code chunk 5)
+  
+```{r 5,out.height="50%",echo=FALSE}
+
+```
+
+### **Predicted happiness score**
+
+  **An example of happiness score of some countries each year:** 
+  
+  (code chunk 6)
+  
+```{r 6,echo=FALSE}
+
+```
+  
+  **The minimum and maximum happiness score over all countries for each region in each year:** 
+  
+  Here is an example of Americas/Carib as region's max and min score over 2015 to 2019. (Code chunk 7)
+  
+```{r 7,echo=FALSE,message=FALSE}
+
+```
+  
+  **The min score of each region over time:**
+  
+  From the graph of min scores, if we rank these regions it comes as: Western Europe> Central and East Europe> Middle East and Northern Africa> Americas/Carib > Asia/SouthPac> Sub-Saharan Africa. This min score trend among six regions are pretty similar, with a sharp decline in 2016 then raise back in 2017, then followed by regular fluctuations. We obtain the different heights of these min score line, this is due to the unequally development among the world, with Europe area highly developed and Sub-Saharan Africa generally poorer than other place in the world. (Code chunk 8)
+  
+```{r 8,out.width="60%",echo=FALSE}
+
+```
+  
+  **The max score of each region over time:**
+  
+  From the graph of max score we basically maintain the same pattern as min score's graph. The rank after the year of 2017 is as: Asia/SouthPac> Western Europe> Americas/Carib> Middle East and Northern Africa> Central and East Europe> Sub-Saharan Africa. However before 2017, the top three ranked regions basically showed no difference. (Code chunk 9)
+  
+```{r 9,out.width="60%",echo=FALSE}
+
+```
+  
+### **Happiest country over time**
+
+  **10 Countries that have highest average happiness score over 5 years: (code chunk 10)**
+  
+```{r 10, echo=FALSE}
+```
+   
+  **10 Countries that have highest difference of happiness score over 5 years: (code chunk 11)**
+  
+```{r 11,echo=FALSE}
+```
+  
+  
+  **Below are the code chunks 1~11**
+  
+```{r 1,eval=FALSE}
+```
+
+```{r 2,eval=FALSE}
+```
+  
+```{r 3,eval=FALSE}
+```
+
+```{r 4,eval=FALSE}
+```
+
+```{r 5,eval=FALSE}
+```
+
+```{r 6,eval=FALSE}
+```
+
+```{r 7,eval=FALSE}
+```
+
+```{r 8,eval=FALSE}
+```
+
+```{r 9,eval=FALSE}
+```
+
+```{r 10,eval=FALSE}
+```
+
+```{r 11,eval=FALSE}
+```
+
+
